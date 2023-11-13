@@ -67,7 +67,7 @@ def react_post(*, session: Session = Depends(get_session), post_id: int, user=De
     return JSONResponse({"msg": "reacted successfully"}, status_code=HTTP_200_OK)
 
 
-@post_router.get("/post/mine", tags=["Posts"], response_model=List[CreatedPost])
+@post_router.get("/post/mine", tags=["Posts"], response_model=List[PostWithComment])
 def list_of_my_posts(*, session: Session = Depends(get_session),
                      user=Depends(auth_handler.get_current_user), page: int = Query(1, ge=1),
                      page_size: int = Query(10, le=50), ):
