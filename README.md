@@ -1,7 +1,5 @@
 # FastApi-Social-Media-App
 
-A social media application to posts, comment, react and reply.
-
 # Overview
 
 A social media application to posts, comment, react and reply.
@@ -39,9 +37,16 @@ http://127.0.0.1:8040 in your web browser.
 To stop the running Docker container, use the following command:
 docker-compose down
 
-# Swagger and FastAPI
+## Swagger Documentation
 
-visit http://127.0.0.1:8040/docs
+We have provided Swagger documentation to help you understand and interact with our API. Follow the steps below to access the Swagger docs:
+
+1. **Run the Project:**
+   Ensure that the project is running locally.
+
+2. **Open Swagger Docs:**
+   Open your web browser and navigate to the following URL:
+   http://127.0.0.1:8040/docs
 
 # Customization
 
