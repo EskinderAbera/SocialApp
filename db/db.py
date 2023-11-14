@@ -1,8 +1,14 @@
+import os
+
 from sqlalchemy.orm import sessionmaker
 from sqlmodel import create_engine
 from sqlmodel import Session
 
-DATABASE_URL = "postgresql://socialuser:socialuser123@ec2-13-51-157-83.eu-north-1.compute.amazonaws.com:5432/socialapp"
+from dotenv import load_dotenv
+
+load_dotenv()
+
+DATABASE_URL = os.getenv("POSTGRES_URL")
 # eng = 'database.db'
 
 # sqlite_url = f'sqlite:///{eng}'
