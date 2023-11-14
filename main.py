@@ -17,5 +17,5 @@ def create_db_and_tables():
 
 
 if __name__ == "__main__":
-    create_db_and_tables()
-    uvicorn.run('main:app', host="localhost", port=8000, reload=True)
+    # create_db_and_tables()
+    uvicorn.run('main:app', host="localhost", port=5000, reload=True)

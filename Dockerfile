@@ -1,15 +1,12 @@
-FROM ubuntu:latest
+FROM python:3.11.2
 LABEL authors="Eskinder Abera"
 
-ENTRYPOINT ["top", "-b"]
-
-FROM python:3.11.2
 WORKDIR /app
 
-COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+# COPY requirements.txt requirements.txt
 
-COPY . .
+COPY . /app
 
-# Command to run the application
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+RUN pip install --no-cache-dir -r requirements.txt
+# # Command to run the application
+# CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5000"]
