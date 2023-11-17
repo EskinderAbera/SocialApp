@@ -5,7 +5,7 @@ from sqlalchemy import func
 from sqlmodel import select, Session, col
 from starlette.responses import JSONResponse
 from starlette.status import *
-
+import socket
 from db.db import get_session, db
 from endpoints.user_endpoints import auth_handler
 from models.post_models import Post, PostReaction, Comment, CommentReaction, CommentReply
@@ -17,7 +17,7 @@ post_router = APIRouter()
 
 @post_router.get('/')
 def greet():
-    return 'Hello production'
+    return f"Container ID: {socket.gethostname()}"
 
 
 @post_router.post('/post', tags=["Posts"], response_model=CreatedPost)
